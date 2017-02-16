@@ -2,17 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <script src="angular.min.js"></script>
     <script src="app.js"></script>
-    <style>body { font-size: 1.5em; }</style>
-    <title>Lecture 02 - Single Page Web Applications with AngularJS</title>
+    <style>body { font-size: 1.3em; }</style>
+    <title>Name Calculator</title>
   </head>
-  <body>
-    <h1>Low Cohesion and Tight Coupling</h1>
-    <div id="nameCalculator">
+  <body ng-app="NameCalculator">
+    <h1>Name Calculator Biz</h1>
+    <div ng-controller="NameCaculatorController">
       <div>
-        Your name: <input type="text" id="name">
+        Your name:
+        <input type="text"
+          ng-model="name"
+          ng-keyup="displayNumeric();">
       </div>
-      <div id="output"></div>
+      <div>Total Numeric value of person's name is: {{totalValue}}</div>
     </div>
   </body>
 </html>
