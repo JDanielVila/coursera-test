@@ -21,9 +21,9 @@
 
     // Empty items aren't taken in account
     function getLunchItems(string) {
-      var trimSep = /^\s*\,*\s*|\s*\,*\s*$/g; // RegExp to discard begin or end separators
-      var separator = /\,+\s*\,*/; // Separator RegExp that discards empty items
-      string = string.replace(trimSep,"");
+      var trimSep = /^[\s*\,*\s*]*|[\s*\,*\s*]*$/g; // RegExp to discard begin or end separators
+      var separator = /[\,+\s*\,*]*/; // Separator RegExp that discards empty items
+      string = string.replace(trimSep,'');
       if(string.length > 0) {
         return string.split(separator).length;
       } else {
