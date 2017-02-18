@@ -5,7 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
-      .message { font-size: 1.3em; font-weight: bold; }
+      .message {
+        font-size: 1.3em;
+        font-weight: bold;
+        display: block;
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-bottom: 5px;
+        border-style: solid;
+        border-color: white;
+        border-width: 1px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+      }
     </style>
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
@@ -24,8 +37,8 @@
          <div class="form-group">
              <button class="btn btn-default" ng-click="checkIfTooMuch()">Check If Too Much</button>
          </div>
-         <div class="form-group message">
-           <p>{{lunchHint}}</p>
+         <div class="form-group message" ng-style="hintStyle">
+           <span>{{lunchHint}}</span>
          </div>
      </div>
    </div>

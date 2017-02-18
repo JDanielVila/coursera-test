@@ -14,8 +14,16 @@
       var num = getLunchItems($scope.lunchList);
       if (num == 0) {
         $scope.lunchHint = 'Please enter data first';
+        $scope.hintStyle = {
+          'border-color':'red',
+          'color':'red'
+        };
       } else {
         $scope.lunchHint = (num <= 3 ? 'Enjoy!' : 'Too much!');
+        $scope.hintStyle = {
+          'border-color':'green',
+          'color':'green'
+        };
       }
     };
 
