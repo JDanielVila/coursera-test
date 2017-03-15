@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" ng-app='NarrowItDownApp'>
+
+<head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <div class="container" ng-controller='NarrowItDownController as narrowCtrl'>
+        <h1>Narrow Down Your Chinese Menu Choice</h1>
+        <div class="row">
+          <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
+            <div class="form-group">
+                <input type="text" ng-model="narrowCtrl.searchTerm" placeholder="search term" class="form-control">
+            </div>
+          </div>
+          <div class="col-xs-5 col-xs-offset-1 col-sm-4 col-sm-offset-2">
+            <div class="form-group narrow-button">
+                <button class="btn btn-primary" ng-click="narrowCtrl.getFoundItems();">Narrow It Down For Me!</button>  
+            </div>
+          </div>
+        </div> 
+        <div class="row"> 
+          <div class="col-xs-12">
+            <div ng-if='!narrowCtrl.showError'>
+              <ul>           
+                <li ng-repeat="item in narrowCtrl.items " >         
+                  <h5>{{item.name}}, {{item.short_name}}</h5>
+                  <p>{{item.description}}</p>   
+                  <button ng-click="narrowCtrl.onRemove({index: $index});">Remove Item</button>          
+                </li>
+              </ul>
+            </div>
+            <div ng-if='narrowCtrl.showError'>Nothing found</div>   
+      </div>
+            
+            <!-- found-items should be implemented as a component 
+            <found-items found-items="narrowCtrl.items" on-remove="narrowCtrl.removeItem($index);" show-error='narrowCtrl.showError'></found-items>
+            -->
+
+    </div>
+
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/app.js"></script>
+
+</body>
+
+</html>
