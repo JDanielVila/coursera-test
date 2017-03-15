@@ -13,7 +13,6 @@
 
   		toBuyList.items = ShoppingListCheckOffService.getToBuyItems();
 		toBuyList.isEmpty = function () {
-			console.log(toBuyList.items.length == 0)
 			return (toBuyList.items.length == 0);
 		}
 
@@ -31,7 +30,6 @@
 		
   		boughtList.items = ShoppingListCheckOffService.getBoughtItems();
 		boughtList.isEmpty = function() {
-			console.log(boughtList.items.length == 0);
 			return (boughtList.items.length == 0);	
 		}
 		
@@ -61,13 +59,11 @@
                           quantity:'3',
                         }];
 	
-	  var boughtItems = [];
-		
-	  	
+	  var boughtItems = []; 	
 
-	  service.bought = function (itemIdex) {
-	  	boughtItems.push(toBuyItems[itemIdex]);
-		toBuyItems.splice(itemIdex, 1);  
+	  service.bought = function (itemIndex) {
+	  	boughtItems.push(toBuyItems[itemIndex]);
+		toBuyItems.splice(itemIndex, 1);  
 	  };
 
 	  service.getToBuyItems = function () {
@@ -79,6 +75,5 @@
 	  };		
 		
 	}	
-
 	
 })(); //funtion end

@@ -50,7 +50,7 @@
   }
 
   
-  MenuSearchService.$inject = ['$http', 'ApiBasePath', '$filter'];
+  MenuSearchService.$inject = ['$http', 'ApiBasePath'];
   function MenuSearchService($http, ApiBasePath) {
     var service = this;
 
