@@ -9,7 +9,6 @@
           required
           minlength="4"
           ng-maxlength="20">
-          {{ regCtrl.user.firstname }}
           <span
             ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
             Username must be at least 4 characters long
@@ -24,7 +23,6 @@
           required
           minlength="4"
           ng-maxlength="20">
-          {{ regCtrl.user.lastname }}
           <span
             ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
             Username must be at least 4 characters long
