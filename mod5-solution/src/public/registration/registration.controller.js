@@ -17,8 +17,8 @@ function RegistrationController(RegistrationService, MenuService) {
     if (regCtrl.user.dish) {
       var promise = MenuService.isMenuItem(regCtrl.user.dish);     
       promise.then(function(value) { 
-        if(value) {
-          regCtrl.dishError == false;
+        if (value == true) {
+          regCtrl.dishError = false;
           RegistrationService.saveRegistration(regCtrl.user);
           regCtrl.saved = true;
         } else {
